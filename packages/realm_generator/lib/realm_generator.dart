@@ -19,6 +19,7 @@ export 'src/error.dart';
 Builder generateRealmObjects([BuilderOptions? options]) {
   return PartBuilder(
     [RealmObjectGenerator()],
+    formatOutput: options?.config['format'] == false ? (str) => str : null,
     '.realm.dart',
   );
 }
